@@ -1,0 +1,46 @@
+import pickle
+import pandas as pd
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+
+import streamlit as st
+
+# Set the page configuration for Streamlit
+st.set_page_config(page_title="Apartment Recommender", page_icon="🏠", layout="centered")
+
+# Add a title and description
+st.title("🏡 Apartment Recommender System")
+st.markdown("""
+    **Discover Your Next Dream Home**  
+    Select an apartment from the dropdown to find similar properties based on advanced text embeddings.
+    """)
+
+# Load the data
+with open('datasets/merge_df_r.pkl', 'rb') as f:
+    merge_df = pickle.load(f)
+
+# Apartment selection
+selected_apartment = st.selectbox(
+    "🔍 Select an Apartment",
+    merge_df['PropertyName'].unique().tolist(),
+    help="Choose an apartment to view similar properties."
+)
+
+# Calculate the cosine similarity matrix
+embeddings_matrix = np.stack(merge_df['BERT_Embeddings'].values)
+cosine_sim_bert = cosine_similarity(embeddings_matrix, embeddings_matrix)
+
+# Function to recommend similar properties
+def recommend(property_name, cosine_sim_bert=cosine_sim_bert):
+    index = merge_df.index[merge_df['PropertyName'] == property_name].tolist()[0]
+    similar_property = list(enumerate(cosine_sim_bert[index]))
+    sorted_similar_property = sorted(similar_property, key=lambda x: x[1], reverse=True)[1:6]
+
+    st.subheader(f"Properties Similar to: **{property_name}**")
+    for i in sorted_similar_property:
+        st.write(f"🏠 **{merge_df['PropertyName'][i[0]]}**")
+
+# Display recommendations if an apartment is selected
+if selected_apartment:
+    st.write("### 🏙️ Most Similar Properties:")
+    recommend(selected_apartment)
