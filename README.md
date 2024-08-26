@@ -40,12 +40,12 @@ Data Preparation: The dataset includes apartment names, their facilities, and co
 Cosine Similarity Calculation: The embeddings are used to calculate a cosine similarity matrix, which helps in identifying similar properties.<br>
 User Interaction: The user selects an apartment from the dropdown, and the system returns the top 5 similar properties based on cosine similarity.<br>
 📊 Technologies Used<br>
-Python
-Streamlit
-BERT (via Hugging Face Transformers)
-scikit-learn
-Pandas
-NumPy
+Python<br>
+Streamlit<br>
+BERT (via Hugging Face Transformers)<br>
+scikit-learn<br>
+Pandas<br>
+NumPy<br>
 
 🎥 Demo
 Check out the YouTube video to see the project in action.
