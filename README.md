@@ -27,3 +27,36 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/apartment-recommender-system.git
    cd apartment-recommender-system
+2. **Create a virtual environment:**
+python3 -m venv venv
+source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+3. **Install the required dependencies:**
+pip install -r requirements.txt
+4. **Run the Streamlit app:**
+streamlit run streamlit_app.py
+
+🧠 How It Works
+Data Preparation: The dataset includes apartment names, their facilities, and corresponding BERT embeddings.
+Cosine Similarity Calculation: The embeddings are used to calculate a cosine similarity matrix, which helps in identifying similar properties.
+User Interaction: The user selects an apartment from the dropdown, and the system returns the top 5 similar properties based on cosine similarity.
+📊 Technologies Used
+Python
+Streamlit
+BERT (via Hugging Face Transformers)
+scikit-learn
+Pandas
+NumPy
+
+🎥 Demo
+Check out the YouTube video to see the project in action.
+https://www.youtube.com/watch?v=CqG_iFv8HjM&t=82s
+
+💻 Code
+The full code is available on GitHub.
+https://github.com/adi180397/Recommender-system-in-machine-learning
+
+Contributions are welcome! Feel free to fork this repository and submit pull requests.
+
+📝 License
+This project is licensed under the MIT License.
+
