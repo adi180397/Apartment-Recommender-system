@@ -35,21 +35,21 @@ pip install -r requirements.txt
 4. **Run the Streamlit app:**
 streamlit run streamlit_app.py
 
-🧠 How It Works\\
-Data Preparation: The dataset includes apartment names, their facilities, and corresponding BERT embeddings.\\
-Cosine Similarity Calculation: The embeddings are used to calculate a cosine similarity matrix, which helps in identifying similar properties.\\
-User Interaction: The user selects an apartment from the dropdown, and the system returns the top 5 similar properties based on cosine similarity. \\
-📊 Technologies Used\\
-Python\\
-Streamlit\\
-BERT (via Hugging Face Transformers)\\
-scikit-learn\\
-Pandas\\
-NumPy\\
+🧠 How It Works<br>
+Data Preparation: The dataset includes apartment names, their facilities, and corresponding BERT embeddings.<br>
+Cosine Similarity Calculation: The embeddings are used to calculate a cosine similarity matrix, which helps in identifying similar properties.<br>
+User Interaction: The user selects an apartment from the dropdown, and the system returns the top 5 similar properties based on cosine similarity.<br>
+📊 Technologies Used<br>
+Python
+Streamlit
+BERT (via Hugging Face Transformers)
+scikit-learn
+Pandas
+NumPy
 
-🎥 Demo\\
-Check out the YouTube video to see the project in action.\\
-https://www.youtube.com/watch?v=CqG_iFv8HjM&t=82s\\
+🎥 Demo
+Check out the YouTube video to see the project in action.
+https://www.youtube.com/watch?v=CqG_iFv8HjM&t=82s
 
 💻 Code
 The full code is available on GitHub.
